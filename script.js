@@ -14,6 +14,10 @@ function hoverMouse(tileset){
     });
 }
 
+function buttonClick(){
+    
+}
+
 
 const container = document.querySelector("#container");
 container.classList.add("container")
