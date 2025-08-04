@@ -17,10 +17,26 @@ function gridMaker(container,num){
     }
 }
 
+function getRandomColor(){
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+    for(let i = 0; i < 6; i++){
+        color += letters[Math.floor(Math.random()*16)]
+    }
+    return color;
+}
+
 function hoverMouse(tileset){
     tileset.forEach(tile => {
         tile.addEventListener("mouseover", (event) => {
             event.target.classList.add("hovered");
+            event.target.style.backgroundColor = getRandomColor();
+        });
+        tile.addEventListener("click",(event)=>{
+            if(event.target.classList.contains("hovered")){
+                const opacity = window.getComputedStyle(event.target).getPropertyValue("opacity");
+                event.target.style.opacity = (+opacity <= 1) ? (`${+opacity + 0.25}`):("1");
+            }
         });
     });
 }

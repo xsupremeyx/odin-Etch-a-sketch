@@ -48,4 +48,5 @@
 
 .hovered{
     background-color: #000;
+    opacity: 50%;
 }
