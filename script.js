@@ -42,16 +42,25 @@ function getRandomColor(){
 }
 
 function hoverMouse(tileset){
+    const colorDisplay = document.querySelector('#colorDisplay');
     tileset.forEach(tile => {
         tile.addEventListener("mouseover", (event) => {
             event.target.classList.add("hovered");
-            event.target.style.backgroundColor = getRandomColor();
+            if(colorDisplay.textContent === 'Black'){
+                event.target.style.backgroundColor = 'black';
+                event.target.style.opacity = 1;
+            }
+            else if(colorDisplay.textContent === 'Random'){
+                event.target.style.backgroundColor = getRandomColor();
+                event.target.style.opacity = 0.5;
+
+            }
         });
         tile.addEventListener("click",(event)=>{
             if(event.target.classList.contains("hovered")){
-                const opacity = window.getComputedStyle(event.target).getPropertyValue("opacity");
-                event.target.style.opacity = (+opacity <= 1) ? (`${+opacity + 0.25}`):("1");
-            }
+                    const opacity = window.getComputedStyle(event.target).getPropertyValue("opacity");
+                    event.target.style.opacity = (+opacity <= 1) ? (`${+opacity + 0.25}`):("1");
+                }
         });
     });
 }
@@ -64,6 +73,9 @@ function promptBttn(input){
 
 function buttonClick(container){
     const setTilebttn = document.querySelector("#resize");
+    const blackBttn = document.querySelector('#blackColor');
+    const randomBttn = document.querySelector('#randomColor');
+    const colorDisplay = document.querySelector('#colorDisplay');
 
     setTilebttn.addEventListener("click",()=>{
         const input = document.querySelector("#gridSize");
@@ -78,6 +90,15 @@ function buttonClick(container){
         hoverMouse(tileset);
 
     });
+
+    blackBttn.addEventListener("click",()=>{
+        colorDisplay.textContent = 'Black';
+    });
+    randomBttn.addEventListener("click",()=>{
+        colorDisplay.textContent = 'Random';
+    });
+
+
 }
 
 
