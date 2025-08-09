@@ -63,7 +63,6 @@ function promptBttn(input){
 }
 
 function buttonClick(container){
-    //WORK OVER HERE
     const setTilebttn = document.querySelector("#resize");
 
     setTilebttn.addEventListener("click",()=>{
