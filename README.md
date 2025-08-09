@@ -1,4 +1,4 @@
-# odin-Etch-a-Sketch 🎨
+# odin-Etch-a-Sketch 🎨 [Version 1.1]
 
 A browser-based digital sketch pad inspired by the classic Etch-a-Sketch toy. Draw by simply moving your mouse across the grid — colors change randomly on hover, and clicking tiles increases their opacity.
 
@@ -72,3 +72,8 @@ This project is open-source and free to use.
 > Created for learning DOM manipulation and CSS layout.
 > Followed The Odin Project Course
 
+
+## Changelog
+
+- Ver 1.0: original version
+- Ver 1.1: Fix the Grid and Add Random / Black color selector options.
