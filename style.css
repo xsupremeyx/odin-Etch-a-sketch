@@ -28,22 +28,33 @@
 }
 .container{
     display: flex;
-    flex-wrap: wrap;
     box-sizing: border-box;
+    flex-direction: column;
     border: 1px solid black;
+
     width: 960px;
     height: auto;
     aspect-ratio: 1/1;
+
     margin: 20px auto;
     align-items: center;
     justify-content: space-evenly;
 }
 
+.row{
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+}
+
 .tile{
     display: flex;
+    flex: 1 1 0;
     border: 1px solid darkgrey;
-    gap: 0px;
     box-sizing: border-box;
+    aspect-ratio: 1/1;
+    
 }
 
 .hovered{

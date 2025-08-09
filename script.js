@@ -3,17 +3,32 @@ function gridMaker(container,num){
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
+    const styles = getComputedStyle(container);
 
-    const containerSize = 960;
-    const borderSize = 2;
+    const containerSize = parseFloat(styles.width);
     const tSize =+(containerSize / num).toFixed(2);
 
-    for(let i = 0; i < num*num; i++ ){
-        const tile = document.createElement("div");
-        tile.classList.add("tile");
-        container.appendChild(tile);
-        tile.style.width = `${tSize - borderSize}px`;
-        tile.style.height = `${tSize - borderSize}px`;
+    const rows = num;
+    const cols = num;
+
+    for(let rowIndex = 0; rowIndex < rows; rowIndex++ ){
+
+        const row = document.createElement("div");
+        row.classList.add("row");
+        row.setAttribute("id",`row-${rowIndex}`);
+        row.style.height = `${(containerSize/rows)}px`;
+        row.style.width = `${containerSize}px`;
+        container.appendChild(row);
+
+        for(let colIndex = 0; colIndex < cols; colIndex++ ){
+            const tile = document.createElement("div");
+            tile.classList.add("tile");
+            tile.setAttribute("id",`col-${colIndex}`);
+            row.appendChild(tile);
+
+            tile.style.width = `${tSize}px`;
+            tile.style.height = `${tSize}px`;
+        }
     }
 }
 
