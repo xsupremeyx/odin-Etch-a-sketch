@@ -55,7 +55,6 @@
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
-    border: 1px solid black;
 
     width: 960px;
     aspect-ratio: 1/1;
@@ -67,16 +66,17 @@
 
 .row{
     display: flex;
+    flex: 1 1 0;
     align-items: center;
     justify-content: center;
 }
 
 .tile{
     display: flex;
+    flex: 1 1 0;
     border: 1px solid black;
     box-sizing: border-box;
-    aspect-ratio: 1/1;
-    
+    aspect-ratio: 1/1;    
 }
 
 .hovered{
